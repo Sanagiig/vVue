@@ -1,4 +1,3 @@
-import { VNodeWithData,VNodeData } from '../../../interface/vnode'
 import { isDef, isObject } from '../../../shared/util'
 
 export function genClassForVnode (vnode: VNodeWithData): string {

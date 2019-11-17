@@ -1,4 +1,3 @@
-import {ModuleOptions} from '../interface/compiler'
 export const emptyObject = Object.freeze({})
 
 // These helpers produce better VM code in JS engines due to their

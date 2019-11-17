@@ -1,4 +1,3 @@
-import {Component} from '../../interface/component'
 import config from '../../core/config'
 import { warn, cached } from '../../core/util/index'
 import { mark, measure } from '../../core/util/perf'

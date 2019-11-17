@@ -1,12 +1,10 @@
-import {ASTAttr,ASTElement,CompilerOptions,ASTNode,ASTText,ASTIfCondition} from '../../../interface/compiler'
-
 import he from 'he'
 import { parseHTML } from './html-parser'
 import { parseText } from './text-parser' 
 import { parseFilters } from './filter-parser'
 import { genAssignmentCode } from '../directives/model'
-import { extend, cached, no, camelize, hyphenate, hasOwn } from '../../../shared/util'
-import { isIE, isEdge, isServerRendering } from '../../../core/util/env'
+import { extend, cached, no, camelize, hyphenate, hasOwn } from '../../shared/util'
+import { isIE, isEdge, isServerRendering } from '../../core/util/env'
 
 import {
   addProp,

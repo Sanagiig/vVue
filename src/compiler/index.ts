@@ -12,7 +12,6 @@ export const createCompiler = createCompilerCreator(function baseCompile (
   options: CompilerOptions
 ): CompiledResult { 
   const ast:any = <ASTElement>parse(template.trim(), options)
-  console.log(Object.assign({},ast));
   if (options.optimize !== false) {
     optimize(ast, options)
   }

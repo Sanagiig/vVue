@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <div type="text"  v-model="test" ></div>
+            just text
+            <select name="" id="">
+                <option v-for="(item,index,dd) in optList" :value="item.val" :key="index">
+                    {{item.label}}
+                </option>
+            </select>
+            <div .qq.asd=".qq.ww"></div>
+            <h1 v-if="isWarning">you has {{warningCount | testFilter}} warning</h1>
+            <h2 v-else-if="isError">you has {{errorCount}} warning</h2>
+            <h3 v-else>nothing</h3>
+            <slot></slot>
+            <slot name="test"></slot>
+            <div v-pre>
+                <div v-model="xxx"></div>
+            </div>
+            <component>
+                test
+            </component>
+        </div>
+    </div>
+    
+    <script src="./dist/index.js"></script>
+</body>
+</html>

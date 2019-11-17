@@ -4,7 +4,6 @@ import config from '../config'
 import { warn } from './debug'
 import { inBrowser, inWeex } from './env'
 import { isPromise } from '../../shared/util'
-import { Component } from '../../interface/component'
 
 export function handleError (err: Error, vm: any, info: string) {
   if (vm) {

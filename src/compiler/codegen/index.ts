@@ -1,18 +1,7 @@
-import {
-  ASTElement,
-  ASTDirective,
-  CompilerOptions,
-  ASTIfCondition,
-  ASTIfConditions,
-  ASTNode,
-  ASTAttr,
-  ASTText,
-  ASTExpression} 
-from '../../../interface/compiler'
 
 import { genHandlers } from './events'
 import baseDirectives from '../directives/index'
-import { camelize, no, extend } from '../../../shared/util'
+import { camelize, no, extend } from '../../shared/util'
 import { baseWarn, pluckModuleFunction } from '../helpers'
 
 type TransformFunction = (el: ASTElement, code: string) => string;

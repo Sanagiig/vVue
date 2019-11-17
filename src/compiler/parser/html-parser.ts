@@ -9,9 +9,9 @@
  * http://erik.eae.net/simplehtmlparser/simplehtmlparser.js
  */
 
-import { makeMap, no } from '../../../shared/util'
-import { isNonPhrasingTag } from '../../../platform/web/compiler/util'
-import { unicodeLetters } from '../../../core/util/lang'
+import { makeMap, no } from '../../shared/util'
+import { isNonPhrasingTag } from '../../platform/web/compiler/util'
+import { unicodeLetters } from '../../core/util/lang'
 
 // Regular Expressions for parsing tags and attributes
 const attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/
@@ -58,13 +58,14 @@ export function parseHTML (html:any, options:any) {
   let index = 0
   let last, 
       lastTag:any
-  debugger
+
   while (html) {
     last = html
     // Make sure we're not in a plaintext content element like script/style
     if (!lastTag || !isPlainTextElement(lastTag)) {
       // 文本结束的位置 "<" 开始的位置
       let textEnd = html.indexOf('<')
+      // 无文本
       if (textEnd === 0) {
         // Comment:
         if (comment.test(html)) {
@@ -153,7 +154,7 @@ export function parseHTML (html:any, options:any) {
         options.chars(text, index - text.length, index)
       }
     } else {
-      // 非首个tag 解析
+      // 非首个tag 解析 或 在 textTag 中
 
       // </endTag> 的长度
       let endTagLength = 0
@@ -226,6 +227,7 @@ export function parseHTML (html:any, options:any) {
         return match
       }
     }
+    
   }
 
   function handleStartTag (match:any) {

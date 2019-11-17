@@ -1,5 +1,3 @@
-
-import { VNodeWithData,VNodeData } from '../../../interface/vnode'
 import { cached, extend, toObject } from '../../../shared/util'
 
 export const parseStyleText = cached(function (cssText:any) {

@@ -1,4 +1,3 @@
-import {ASTElementHandlers,ASTElementHandler,ASTModifiers} from '../../../interface/compiler'
 const fnExpRE = /^([\w$_]+|\([^)]*?\))\s*=>|^function\s*\(/
 const fnInvokeRE = /\([^)]*?\);*$/
 const simplePathRE = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/

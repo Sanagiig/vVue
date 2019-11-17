@@ -1,6 +1,3 @@
-/* @flow */
-
-import { Component } from '../../interface/component'
 import config from '../config'
 import { warn } from './debug'
 import { set } from '../observer/index'
@@ -21,7 +18,6 @@ import {
   isBuiltInTag,
   isPlainObject
 } from '../../shared/util'
-import { Obj } from '../../interface/base'
 
 /**
  * Option overwriting strategies are functions that handle

@@ -1,17 +1,10 @@
 // 一个常见的`webpack`配置文件
 const webpack = require('webpack');
+const config = require('./config');
 
-module.exports = {
-  // entry: "./src/entry-with-compiler.ts", //已多次提及的唯一入口文件
-  entry: "./src/test/index.ts", //已多次提及的唯一入口文件
-  // output: {
-  //   path: __dirname + "/dist",
-  //   filename: "myVue.js"
-  // },
-  output: {
-    path: __dirname + "/src/test/dist",
-    filename: "index.js"
-  },
+var curConfig = config.genConfig(process.env.TARGET,__dirname);
+const outConfig = {
+  ...curConfig,
   resolve: {
     // 先尝试 ts 后缀的 TypeScript 源码文件
     extensions: ['.ts', '.js'] 
@@ -39,3 +32,5 @@ module.exports = {
     ]
   }
 };
+
+module.exports = outConfig 
